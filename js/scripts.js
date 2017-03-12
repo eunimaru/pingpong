@@ -1,25 +1,25 @@
-var leapYear = function(year) {
-  if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
-    return true;
-  } else {
-    return false;
-  }
-};
-// user interface logic
+
 $(document).ready(function() {
-  $("form#leap-year").submit(function(event) {
+  $("form#pingpong").submit(function(event) {
     event.preventDefault();
-    var year = parseInt($("input#year").val());
-    var result = leapYear(year);
 
-    $(".year").text(year);
+var numberinput= $("#number").val();
+var numberEnter= parseInt(numberinput);
+var othernumbers= [];
+console.log(numberEnter);
 
-    if (!result) {                 // same as writing if (result === false)
-      $(".not").text("not");
-    } else {
-      $(".not").text("");
-    }
+for(var i=1; numberEnter >=i; i+=1) {
 
-    $("#result").show();
-  });
+$("#result").text(othernumbers)
+}
+if (numberEnter % 15 === 0) {
+    $("#result").text("pingpong");
+  }
+else if (numberEnter % 5 === 0) {
+    $("#result").text("pong");
+}
+  else if (numberEnter % 3 === 0) {
+    $("#result").text("ping");
+}
+});
 });
