@@ -1,3 +1,21 @@
+function countTo (numberEnter){
+  for(var i=1; numberEnter >=i; i+=1) {
+
+  if (i % 15 === 0) {
+    $("#result").append("pingpong");
+  }
+    else if (i % 5 === 0) {
+    $("#result").append("pong");
+  }
+  else if (i % 3 === 0) {
+    $("#result").append("ping");
+  }
+  else {
+    $("#result").append("<p>"+ i + "</p>");
+      }
+    }
+  }
+
 
 $(document).ready(function() {
   $("form#pingpong").submit(function(event) {
@@ -5,21 +23,8 @@ $(document).ready(function() {
 
 var numberinput= $("#number").val();
 var numberEnter= parseInt(numberinput);
-var othernumbers= [];
-console.log(numberEnter);
+$("#result").text("");
+countTo(numberEnter);
 
-for(var i=1; numberEnter >=i; i+=1) {
-
-$("#result").text(othernumbers)
-}
-if (numberEnter % 15 === 0) {
-    $("#result").text("pingpong");
-  }
-else if (numberEnter % 5 === 0) {
-    $("#result").text("pong");
-}
-  else if (numberEnter % 3 === 0) {
-    $("#result").text("ping");
-}
-});
+  });
 });
